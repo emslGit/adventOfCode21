@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "file.h"
-#define PATH "src/input"
+#define PATH "input"
 using namespace std;
 
 int prev_sum = 0;
