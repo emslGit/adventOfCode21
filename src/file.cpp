@@ -1,12 +1,13 @@
 #include "file.h"
 #include <iostream>
-
 #include <fstream>
+
+
 using namespace std;
 
-int parse_file(
+void parse_file(
     string path,
-    int buf[])
+    string buf[])
 {
     string line;
     ifstream file;
@@ -15,10 +16,9 @@ int parse_file(
 
     int i = 0;
     while (getline(file, line)) {
-        buf[i] = stoi(line);
+        buf[i] = line;
         i++;
     }
 
     file.close();
-    return 0;
 }

@@ -1,4 +1,4 @@
 #pragma once
 #include <string>
 
-int parse_file(std::string path, int buf[]);
+void parse_file(std::string path, std::string buf[]);

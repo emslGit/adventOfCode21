@@ -1,22 +1,23 @@
 #include <iostream>
 #include <fstream>
 #include "file.h"
-#define PATH "input"
 using namespace std;
 
+string buf[0xFFF];
+int nums[0xFFF];
 int prev_sum = 0;
 int sum = 0;
-int nums[0xFFF];
 int counter = 0;
 
 int main()
 {
     int j = 0;
 
-    parse_file(PATH, nums);
+    parse_file("inputs/in1", buf);
 
-    for (int num : nums) {
-        if (num == 0) {
+    for (string num : buf) {
+        nums[j] = atoi(num.c_str());
+        if (nums[j] == 0) {
             break;
         }
         if (j > 2) {
