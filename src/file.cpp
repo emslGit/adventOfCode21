@@ -7,18 +7,34 @@ using namespace std;
 
 void parse_file(
     string path,
-    string buf[])
+    vector<string> buf)
 {
     string line;
     ifstream file;
 
     file.open(path, ios::in);
 
-    int i = 0;
     while (getline(file, line)) {
-        buf[i] = line;
-        i++;
+        buf.push_back(line);
     }
 
     file.close();
+}
+
+void split(
+    std::string str,
+    std::vector<int> *buf,
+    char del)
+{
+    std::string tmp = "";
+
+    for (char c : str) {
+        if (c == del) {
+            buf->push_back(std::stoi(tmp.c_str()));
+            tmp = "";
+        } else {
+            tmp += c;
+        }
+    }
+    buf->push_back(std::stoi(tmp.c_str()));
 }
